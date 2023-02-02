@@ -1,0 +1,35 @@
+service: jwt-authorizers
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    JWT_KEY: 'jtwexemplekey'
+
+functions:
+  login:
+    handler: src/auth.login
+    events:
+      - http:
+          path: /login
+          method: post
+          cors: true      
+  users-list:
+    handler: src/users.list
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+  users-create:
+    handler: src/users.list 
+    events:
+      - http:
+          path: user
+          method: post
+          cors: true        
+
+plugins:
+  - serverless-offline
+

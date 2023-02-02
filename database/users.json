@@ -1,0 +1,16 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "scope": [
+      "users:list"
+    ]
+  },
+  {
+    "username": "user",
+    "password": "user",
+    "scope": [
+      "users:create"
+    ]
+  }
+]
