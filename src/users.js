@@ -8,7 +8,7 @@ class Users {
     }
   }
 
-  create () {
+  async create () {
     return {
       statusCode: 200,
       body: JSON.stringify({

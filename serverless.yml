@@ -8,6 +8,9 @@ provider:
     JWT_KEY: 'jtwexemplekey'
 
 functions:
+  authorizer:
+    handler: src/auth.authorizer
+
   login:
     handler: src/auth.login
     events:
@@ -22,13 +25,15 @@ functions:
           path: users
           method: get
           cors: true
+          authorizer: authorizer
   users-create:
-    handler: src/users.list 
+    handler: src/users.create 
     events:
       - http:
-          path: user
+          path: users
           method: post
-          cors: true        
+          cors: true 
+          authorizer: authorizer
 
 plugins:
   - serverless-offline

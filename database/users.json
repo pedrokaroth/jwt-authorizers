@@ -1,16 +1,18 @@
 [
   {
+    "id": 1,
     "username": "admin",
     "password": "admin",
-    "scope": [
-      "users:list"
+    "scopes": [
+      "users:get"
     ]
   },
   {
+    "id": 2,
     "username": "user",
     "password": "user",
-    "scope": [
-      "users:create"
+    "scopes": [
+      "users:post"
     ]
   }
 ]
