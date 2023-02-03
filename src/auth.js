@@ -64,8 +64,6 @@ module.exports.authorizer = async ({ authorizationToken, methodArn }) => {
       user: JSON.stringify(user)
     }
 
-    authorizeAccess(user, methodArn)
-
     return buildIAMPolicy(
       user.id,
       authorizeAccess(user, methodArn),
